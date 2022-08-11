@@ -23,12 +23,12 @@ return (0);
 }
 
 /**
- * _which - locates a command
- *
- * @cmd: command name
- * @_environ: environment variable
- * Return: location of the command.
- */
+* _which - locates a command
+*
+* @cmd: command name
+* @_environ: environment variable
+* Return: location of the command.
+*/
 char *_which(char *cmd, char **_environ)
 {
 char *path, *ptr_path, *token_path, *dir;
@@ -45,8 +45,8 @@ i = 0;
 while (token_path != NULL)
 {
 if (is_cdir(path, &i))
-  if (stat(cmd, &st) == 0)
-    return (cmd);
+if (stat(cmd, &st) == 0)
+return (cmd);
 len_dir = _strlen(token_path);
 dir = malloc(len_dir + len_cmd + 2);
 _strcpy(dir, token_path);
@@ -55,8 +55,8 @@ _strcat(dir, cmd);
 _strcat(dir, "\0");
 if (stat(dir, &st) == 0)
 {
-  free(ptr_path);
-  return (dir);
+free(ptr_path);
+return (dir);
 }
 free(dir);
 token_path = _strtok(NULL, ":");
@@ -90,16 +90,16 @@ for (i = 0; input[i]; i++)
 if (input[i] == '.')
 {
 if (input[i + 1] == '.')
-  return (0);
+return (0);
 if (input[i + 1] == '/')
-  continue;
+continue;
 else
-  break;
+break;
 }
 else if (input[i] == '/' && i != 0)
 {
 if (input[i + 1] == '.')
-  continue;
+continue;
 i++;
 break;
 }

@@ -18,17 +18,17 @@ for (i = 0; input[i]; i++)
 if (input[i] == '|')
 {
 if (input[i + 1] != '|')
-  input[i] = 16;
+input[i] = 16;
 else
-  i++;
+i++;
 }
 
 if (input[i] == '&')
 {
 if (input[i + 1] != '&')
-  input[i] = 12;
+input[i] = 12;
 else
-  i++;
+i++;
 }
 }
 }
