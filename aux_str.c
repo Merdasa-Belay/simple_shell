@@ -61,3 +61,41 @@ if (s1[i] < s2[i])
 return (-1);
 return (0);
 }
+
+char *_strchr(char *s, char c)
+{
+unsigned int i = 0;
+
+for (; *(s + i) != '\0'; i++)
+if (*(s + i) == c)
+return (s + i);
+if (*(s + i) == c)
+return (s + i);
+return ('\0');
+}
+/**
+ * _strspn - gets the length of a prefix substring.
+ * @s: initial segment.
+ * @accept: accepted bytes.
+ * Return: the number of accepted bytes.
+ */
+int _strspn(char *s, char *accept)
+{
+int i, j, bool;
+
+for (i = 0; *(s + i) != '\0'; i++)
+{
+bool = 1;
+for (j = 0; *(accept + j) != '\0'; j++)
+{
+if (*(s + i) == *(accept + j))
+{
+bool = 0;
+break;
+}
+}
+if (bool == 1)
+break;
+}
+return (i);
+}
